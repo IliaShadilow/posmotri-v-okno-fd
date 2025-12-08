@@ -59,7 +59,7 @@ ol {
   align-items: end;
   width: 100%;
   max-width: 1140px;
-  background-color: rgb(25, 238, 46)
+  /* background-color: rgb(25, 238, 46); */
 }
 
 .content__card-link {
@@ -183,11 +183,54 @@ ol {
 
 .search-form__fieldset {
   font-family: inherit;
+  border: none;
 }
 
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: normal;
+}
+
+/* сделай для каждого подпункта подсказки */
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 39px;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: solid 1px #fff;
+  /* padding: 1px; TODO: подумать если ставить обводку в пиксель
+  то сама рамку уходит, подумать как решить это и сделать
+  по мокету*/
+  
+}
+
+.search-form__textfield {
+   border: none; /* Убирает рамку */
+  padding: 0; /* Сброс отступов внутри поля */
+  background-color: transparent; /* Делает фон прозрачным */
+  font-family: inherit; /* Наследует шрифт от родительского элемента */
+  color: inherit; 
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
 }
 
 /* search-form__submit-button */
@@ -207,6 +250,18 @@ ol {
   padding: 6px 0;
   font-weight: bold;
 
+}
+
+/* скрывает элементы на спранице, но видет скринридерам */
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* Кастомный скроллбар */
