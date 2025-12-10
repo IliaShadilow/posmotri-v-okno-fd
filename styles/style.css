@@ -119,15 +119,15 @@ ol {
   gap: 30px;
 }
 
-.content__list-item {
-  
-}
-
 .content__list {
   display: flex;
   flex-direction: column; /* Расположить блоки вертикально */
   gap: 30px;
 }
+
+/* .content__list-item {
+  
+} */
 
 .content__video-card {
   display: flex; 
@@ -198,11 +198,20 @@ ol {
   gap: 39px;
 }
 
+.search-form__checkbox-list .search-form__label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__checkbox-list .search-form__label:has(:focus-visible):hover {
+  outline: solid 1px #fff;
+}
+
 .search-form__label {
   display: flex;
   flex-direction: row;
   align-items:center;
-  width: fit-content;
+  width: fit-content; /* TODO: как сделать чтобы подскажка с поле реально растягивалась на всю ширину? */
   gap: 5px;
 }
 
@@ -233,6 +242,28 @@ ol {
   color: rgb(255 255 255 / 0.7);
 }
 
+/* search-form__pseudo-checkbox */
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: solid 1px #fff;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;  /* чтобы скрыть элемент */
+}
+
+.search-form__pseudo-checkbox::after:checked {
+  opacity: 0;  /* сделать его видимым */
+}
+
 /* search-form__submit-button */
 
 .search-form__submit-button {
@@ -240,6 +271,15 @@ ol {
   font-weight: bold;
   padding: 6px 73.5px;
   border: solid 1px #fff;
+}
+
+.search-form__submit-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__submit-button:active {
+  background-color: #545050;
 }
 
 /* more-button-template */
