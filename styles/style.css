@@ -63,8 +63,29 @@ ol {
 }
 
 .content__card-link {
+  display: block; /* какой цвет у карточки который нужно поставить в задании? */
   text-decoration: none; /* Убирает подчёркивание */
   color: inherit;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__list-item .content__card-link:focus-visible {
+  outline: solid  1px #fff;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__list-item {
+  padding: 0 3px;
 }
 
 /* content__details */
@@ -96,14 +117,6 @@ ol {
 
 .content__video-card:hover {
   text-decoration: underline;
-}
-
-/* .content__video-card:has(:focus-visible) {
-  outline: #fff;
-} */
-
-.content__video-card:active {
-  background-color: #545050;
 }
 
 .content__video-card-title {
@@ -323,7 +336,7 @@ ol {
   background-color: #545050;
 }
 
-сделать псевдоклассы по макету ровно
+/* сделать псевдоклассы по макету ровно */
 
 /* more-button-template */
 
@@ -332,7 +345,6 @@ ol {
   border: solid 1px #fff;
   padding: 6px 0;
   font-weight: bold;
-
 }
 
 /* скрывает элементы на спранице, но видет скринридерам */
