@@ -28,11 +28,11 @@ ol {
 }
 
 .button {
-  padding: 0;
   border: none;
-  background-color: transparent;
-  font: inherit;
+  padding: 0;
   color: inherit;
+  font: inherit;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -42,13 +42,13 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 /* content */
@@ -59,25 +59,26 @@ ol {
   align-items: end;
   width: 100%;
   max-width: 1140px;
-  /* background-color: rgb(25, 238, 46); */
 }
+
+/* content__card-link */
 
 .content__card-link {
   display: block; /* какой цвет у карточки который нужно поставить в задании? */
-  text-decoration: none; /* Убирает подчёркивание */
   color: inherit;
+  text-decoration: none; /* Убирает подчёркивание */
 }
 
 .content__card-link:active {
   background-color: #545050;
 }
 
-.content__list-item .content__card-link:focus-visible {
-  outline: solid  1px #fff;
-}
-
 .content__card-link:focus {
   outline: none;
+}
+
+.content__list-item .content__card-link:focus-visible {
+  outline: solid 1px #fff;
 }
 
 .content__card-link_current {
@@ -92,26 +93,28 @@ ol {
 
 .content__details {
   width: 100%;
-  height: 100%;
   max-width: 390px;
+  height: 100%;
 }
 
 .title {
   font-family: Oswald, Arial, sans-serif;
-  text-transform: uppercase;
   font-size: 75px;
   line-height: 94%;
+  text-transform: uppercase;
 }
 
 .content__accent {
   color: #545050;
 }
 
+/* content__video-card */
+
 .content__video-card {
-  display: flex; 
+  display: flex;
   flex-direction: row; /* Указываем направление строк */
-  align-items: flex-start; 
   justify-content: space-between;
+  align-items: flex-start;
   /* flex-direction: column; */
 }
 
@@ -120,37 +123,37 @@ ol {
 }
 
 .content__video-card-title {
-  font-size: 30px;
-  font-family: Oswald, Arial, sans-serif;
-  text-transform: uppercase;
   width: 196px;
-  white-space: nowrap; /* Запрещает перенос строк */
   overflow: hidden; /* Скрывает излишний текст */
+  font-family: Oswald, Arial, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
   text-overflow: ellipsis; /* Добавляет "..." в конце обрезанного текста */
+  white-space: nowrap; /* Запрещает перенос строк */
 }
 
 .content__video-card-description {
-  width: 196px;
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  line-height: 16.5px;
   display: -webkit-box; /* Добавляем это свойство */
+  width: 196px;
+  overflow: hidden;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 16.5px;
+  text-overflow: ellipsis; /* показывает пользователю, что текст обрезан и информация может быть неполной  "..." в конце обрезанного текста */
   -webkit-line-clamp: 4; /* Ограничивает текст тремя строками */
   -webkit-box-orient: vertical; /* Добавляем это свойство */
-  text-overflow: ellipsis; /* показывает пользователю, что текст обрезан и информация может быть неполной  "..." в конце обрезанного текста */
-  overflow: hidden;
 }
 
 .content__list-container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 30px;
   width: inherit;
   height: 298px;
-  overflow-y: auto; /* Добавляет вертикальную прокрутку при необходимости */
   margin-top: 26px;
-  gap: 30px;
-  position: relative;
+  overflow-y: auto; /* Добавляет вертикальную прокрутку при необходимости */
 }
 
 .content__list {
@@ -159,9 +162,7 @@ ol {
   gap: 30px;
 }
 
-/* .content__list-item {
-  
-} */
+/* content__video */
 
 .content__video-card-thumbnail {
   width: 194px;
@@ -182,56 +183,69 @@ ol {
   margin: 78px 30px 0 0;
 }
 
-.result__video-container {
-  width: 100%;
-  margin-bottom: 16px;
-  position: relative;
-}
+/* result__video */
 
 .result__video {
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   object-fit: cover; /* Сохраняем пропорции видео, обрезая лишнее */
 }
+
+.result__video-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* search-form */
 
 .search-form {
   display: flex;
   flex-direction: row;
-  gap: 30px; 
-  font-family: 'Fira Sans Condensed', Arial, sans-serif;
-  /* margin-top: 16px; */
   align-items: flex-start;
-
+  gap: 30px;
   width: 100%;
-
-  /* пробное решение  для растяжение input на всю длинну */
-  /* justify-content: space-between; */
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
 }
 
 .search-form :nth-child(3) {
   align-self: flex-end;
 }
 
+/* search-form__fieldset */
+
 .search-form__fieldset {
-  font-family: inherit;
-  border: none;
+  box-sizing: border-box;
   width: 100%; /* найти решение чтобы поправить букву в подсказки формы*/
   /* max-width: 255px; */
   max-width: 255px;
-  box-sizing: border-box;
+  border: none;
+  font-family: inherit;
 }
-
-/* .search-form__fieldset :nth-child(3) {
-  max-width: 212px;
-} */
 
 .search-form__fieldset-title {
-  font-size: 18px;
+  margin: 0 0 5px;
   font-weight: normal;
-  margin: 0 0 5px 0;
+  font-size: 18px;
 }
 
-/* сделай для каждого подпункта подсказки */
+/* search-form__label */
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: solid 1px #fff;
+}
+
+/* search-form__checkbox-list */
 
 .search-form__checkbox-list {
   display: flex;
@@ -244,48 +258,26 @@ ol {
 }
 
 .search-form__checkbox-list .search-form__label:has(:focus-visible) {
-  outline: solid 1px #fff;/* TODO: чекбоксы вообще не нажимаются без js */
-}
-
-.search-form__label {
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  /* width: fit-content;  */
-  gap: 5px;
-  padding: 1px;
-  
-  /* пробное решение  для растяжение input на всю длинну */
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.search-form__label:has(:focus-visible) {
   outline: solid 1px #fff;
-  /* padding: 1px; TODO: подумать если ставить обводку в пиксель
-  то сама рамку уходит, подумать как решить это и сделать
-  по мокету*/
-  
 }
+
+/* search-form__textfield */
 
 .search-form__textfield {
+  flex-grow: 1; /* чтобы подсказка была во всю ширину своего текста */
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   border: none; /* Убирает рамку */
-  padding: 2px 14px 2px 0; /* Сброс отступов внутри поля */
-  background-color: transparent; /* Делает фон прозрачным */
-  color: inherit; 
   border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
-  appearance: none;
-  font-size: 18px;
+  padding: 2px 14px 2px 0; /* Сброс отступов внутри поля */
+  color: inherit;
   font-family: inherit;
   font-weight: normal;
-  width: 100%;
-
-  /* пробное решение  для растяжение input на всю длинну */
-  box-sizing: border-box;
-  /* Дополнительно: предотвращаем сжатие в flex-контейнере */
-  min-width: 0;
-  flex-grow: 1;
+  font-size: 18px;
+  background-color: transparent; /* Делает фон прозрачным */
+  appearance: none;
 }
 
 .search-form__textfield:focus {
@@ -306,28 +298,26 @@ ol {
 }
 
 .search-form__pseudo-checkbox::after {
-  content: "";
+  content: '';
   display: block;
-  background-color: #fff;
   width: 100%;
   height: 100%;
-  opacity: 0;  /* чтобы скрыть элемент */
+  opacity: 0; /* чтобы скрыть элемент */
+  background-color: #fff;
 }
 
 .search-form__pseudo-checkbox::after:checked {
-  opacity: 0;  /* сделать его видимым */
+  opacity: 0; /* сделать его видимым */
 }
 
 /* search-form__submit-button */
 
 .search-form__submit-button {
-  font-size: 18px;
-  font-weight: bold;
-  /* padding: 6px 73.5px; */
-  border: solid 1px #fff;
-
-  padding: 5.6px 72.9px; /* Увеличили на 1px */
   margin: -1px; /* Компенсируем внешний размер для :focus-visible */
+  border: solid 1px #fff;
+  padding: 5.6px 72.9px; /* Увеличили на 1px */
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .search-form__submit-button:hover {
@@ -337,28 +327,18 @@ ol {
 
 .search-form__submit-button:focus {
   outline: none;
-  /* padding: 1px; TODO: подумать если ставить обводку в пиксель
-  то сама рамку уходит, подумать как решить это и сделать
-  по мокету*/
-  
 }
 
 .search-form__submit-button:focus-visible {
   outline: solid 1px #fff;
   outline-offset: 1px; /* Ключевое свойство — создаёт отступ */
-  /* padding: 1px; TODO: подумать если ставить обводку в пиксель
-  то сама рамку уходит, подумать как решить это и сделать
-  по мокету*/
-  
 }
 
 .search-form__submit-button:active {
   background-color: #545050;
 }
 
-/* сделать псевдоклассы по макету ровно */
-
-/* more-button-template */
+/* more-button */
 
 .more-button {
   width: 100%;
@@ -367,14 +347,15 @@ ol {
   font-weight: bold;
 }
 
-/* скрывает элементы на спранице, но видет скринридерам */
+/* visually-hidden */
 
 .visually-hidden {
+  /* скрывает элементы на спранице, но видет скринридерам */
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -384,20 +365,21 @@ ol {
 .preloader {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
 }
 
 /* Кастомный скроллбар */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
