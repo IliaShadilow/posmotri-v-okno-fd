@@ -78,4 +78,4 @@ fixAll
 
 Доработать сайт когда изучу адаптацию, чтобы он открывался на всех устройствах, так как ему необходимо
 
-[Сылка на проект](https://github.com/IliaShadilow/posmotri-v-okno-fd)
+https://github.com/IliaShadilow/posmotri-v-okno-fd
